@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 import networkx as nx
 
 
+
 ## Obtenemos el grafo segun un lugar
 def getGrafo(place_name):
     ## lugar donde buscaremos
@@ -56,18 +57,19 @@ def algoritmoDijkstra(graph, origen, destino):
 ## Casos de prueba
 
 ## Cuatro puntos - Mariano Melgar
-nort = -16.3948
-south = -16.4139
-east = -71.4917
-west = -71.5169
+nort = -16.3903
+south = -16.4206
+east = -71.5128
+west = -71.5543
 
 # place_name = 'Arequipa, Peru'
 place_name = 'Arequipa, Peru'
 
 graph = getGrafo(nort, south, east, west)
-
+ox.save_graph_xml(graph, filepath='./graph.osm')
 dibujarOsm(graph)
 
+# dibujarNetworkx(graph)
 nodos = list(getNodos(graph))
 aristas = list(getAristas(graph))
 
